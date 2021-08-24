@@ -2,16 +2,13 @@ import { createSlice } from '@reduxjs/toolkit';
 import exampleData from '../public/exampledata';
 
 var initialUserData = [
-  [0, exampleData.avatar],
-  [1, exampleData.adventureTime],
-  [2, exampleData.gardenWall]
+  exampleData.avatar,
+  exampleData.adventureTime,
+  exampleData.gardenWall
 ];
-var stateMap = new Map(initialUserData);
-
-console.log(stateMap);
 
 const initialState = {
-  userShows: stateMap,
+  userShows: initialUserData,
   selectedShow: {}
 }
 
@@ -21,28 +18,17 @@ export const listSlice = createSlice({
   reducers: {
     addEntry: (state, action) => {
       var newShow = action.payload;
-      var keyFinder = state.userShows.keys();
-      var newKey = -1;
-
-      while (keyFinder !== undefined) {
-        if (keyFinder > newKey) {
-          newKey = keyFinder;
-        }
-      }
-      state.userShows.set(newKey + 1, newShow);
+      state.userShows.push(newShow);
     },
     removeEntry: (state, action) => {
-      var unwantedShowIndex = action.payload;
-      state.delete(unwantedShowIndex);
+      var unwantedShowIndex = state.userShows.indexOf(action.payload);
+      state.userShows.splice(unwantedShowIndex, 1);
     },
     updateEntry: (state, action) => {
-      var changeIndex = action.payload.index;
+      var changeIndex = state.userShows.indexOf(action.payload.show);
       var changedScore = action.payload.score;
 
-      var changedShow = state.userShows.get(changeIndex);
-      changedShow.score = changedScore;
-
-      state.userShows.set(changeIndex, changedShow);
+      state.userShows[changeIndex].score = changedScore;
     },
     selectEntry: (state, action) => {
       var selectedShow = action.payload;

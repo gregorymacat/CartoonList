@@ -3,12 +3,13 @@ import {useSelector, useDispatch} from 'react-redux';
 import {selectEntry} from './listSlice';
 
 var ToonList = function() {
-  var userShows = useSelector((state) => {state.userShows});
+  var userShows = useSelector((state) => state.list.userShows);
+  console.log(userShows);
 
   return (
     <div className="user-cartoon-list">
       {
-        userShows.forEach((currentShow) => {
+        userShows.map((currentShow) => {
           return (
             <div>
               <img src={currentShow.image} alt='image of show'></img>
