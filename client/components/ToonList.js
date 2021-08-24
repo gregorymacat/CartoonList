@@ -9,13 +9,17 @@ var ToonList = function() {
   return (
     <div className="user-cartoon-list">
       {
-        userShows.map((currentShow) => {
+        userShows.map((currentShow, index) => {
           return (
-            <div>
+            <div className="cartoon-list-entry"  key={index} data-index={index}>
               <img src={currentShow.image} alt='image of show'></img>
-              <span>{currentShow.name}</span>
-              <span>{currentShow.score}</span>
-              <span>{currentShow.description}</span>
+              <div className="cartoon-list-entry-text">
+                <div className="cartoon-list-entry-top">
+                  <span>{currentShow.name}</span>
+                  <span>Score: {currentShow.score}</span>
+                </div>
+                <span className="cartoon-list-entry-bottom">{currentShow.description}</span>
+              </div>
             </div>
           )
         })

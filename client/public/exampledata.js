@@ -16,7 +16,31 @@ export const exampleData = {
     score: null,
     description: 'On an adventure, brothers Wirt and Greg get lost in the Unknown, a strange forest adrift in time. A wise old woodsman and bluebird Beatrice help them find their way. Along the way, Wirt\'s thoughts envelope him, while the wonder of the surroundings preoccupy Greg. The miniseries -- based on creator Patrick McHale\'s cartoon short "Tome of the Unknown" -- features animation that evokes a nostalgic storybook feeling, inspired by folk art and classic illustrations. The voices include Elijah Wood and Christopher Lloyd with Samuel Ramey, Chris Isaak and John Cleese among guests.',
     image: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQoiAgveF00GKJPCtWOOOXNyOTSp3_p6P-xwYND1anWDMqLCb6I'
-  }
+  },
+  gumball: {
+    name: 'Amazing World of Gumball',
+    score: null,
+    description: 'No, this animated series is not about anthropomorphic chewing gum, it\'s about a young cat named Gumball Watterson. Gumball has a penchant for getting into trouble, often resulting from schemes he comes up with, but he never seems to learn his lesson. Gumball\'s best friend is a fish named Darwin, who used to be the family pet until he grew legs and became part of the family. Gumball resents his younger sister, Anais, because she is the smartest member of the family. Gumball\'s mother is the breadwinner in the family, working long hours at the rainbow factory, and his father stays at home watching TV and playing video games.',
+    image: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSVzx4M_QuglG5mUxIejWlNcspUaPT_WuQ3HRsjgJs0wwl42pvm'
+  },
+  infinity: {
+    name: 'Infinity Train',
+    score: null,
+    description: 'Following on the success of "Regular Show", Cartoon Network show creator Owen Dennis introduces a new animated series highlighting the adventures of a preteen and her robot companion. Tulip Owens is a 13-year-old girl who aspires to become a computer game programmer but finds herself trapped on a train one day and is looking for a way out. She meets a robot called One-One, which consists of two spherical robots containing contrasting personalities that can combine into the shape of a basketball. Together they search the train, meeting a cast of strange characters along the way and hoping to find clues that will help Tulip find her way home.',
+    image: 'https://m.media-amazon.com/images/M/MV5BODMyNGMxZGEtY2RiZS00YTViLWIzYTctMmFhZDNmZTIyMTczXkEyXkFqcGdeQXVyOTk3NjY3NTM@._V1_.jpg'
+  },
+  steven: {
+    name: 'Steven Universe',
+    score: null,
+    description: 'The Crystal Gems are a team of magical beings who are the self-appointed guardians of the universe. Half-human, half-Gem hero Steven is the "little brother" of the group. The goofball is learning to save the world using the magical powers that come from his bellybutton and he goes on magical adventures with the rest of the Crystal Gems, even though he\'s not as powerful -- or smart -- as fellow group members Garnet, Amethyst and Pearl. Despite his shortcomings, Steven usually finds a surprising way to save the day.',
+    image: 'https://m.media-amazon.com/images/M/MV5BNTNjMTM1YWYtZWQ3Yy00OGI1LWEyZjUtYTk3OTk5NGIxMzIyXkEyXkFqcGdeQXVyMzM4NjcxOTc@._V1_.jpg'
+  },
+  bears: {
+    name: 'We Bare Bears',
+    score: null,
+    description: 'Three brother bears awkwardly attempt to find their place in civilized society, whether they\'re looking for food, trying to make human friends, or scheming to become famous on the internet. Grizzly, Panda and Ice Bear stack atop one another when they leave their cave and explore the hipster environs of the San Francisco Bay Area, and it\'s clear the siblings have a lot to learn about a technologically driven world. By their side on many adventures are best friend Chloe (the only human character in the cast), fame-obsessed panda Nom Nom, and Charlie, aka Bigfoot.',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsxM6XAj_KbAn_liJjUJMHEjP3IQdUay5iRIEseka7lK3vE55n'
+  },
 }
 
 export default exampleData;

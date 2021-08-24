@@ -4,7 +4,11 @@ import exampleData from '../public/exampledata';
 var initialUserData = [
   exampleData.avatar,
   exampleData.adventureTime,
-  exampleData.gardenWall
+  exampleData.gardenWall,
+  exampleData.gumball,
+  exampleData.steven,
+  exampleData.infinity,
+  exampleData.bears,
 ];
 
 const initialState = {
