@@ -151,3 +151,7 @@ nav h1 {
   margin: 2%;
   resize: none;
 }
+.user-cartoon-form-bottom {
+  display: flex;
+  margin: 2%;
+}

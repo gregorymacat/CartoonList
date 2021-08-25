@@ -2,7 +2,7 @@ import React from 'react';
 import UserForm from './UserForm';
 
 import {useSelector, useDispatch} from 'react-redux';
-import {selectEntry, updateEntry} from './listSlice';
+import {selectEntry, updateEntry, removeEntry} from './listSlice';
 
 var ToonModal = function() {
   var selectedShow = useSelector((state) => state.list.selectedShow)
@@ -11,8 +11,13 @@ var ToonModal = function() {
     return null;
   }
 
-  var clickHandler = function(userInput) {
-    dispatch(updateEntry([selectedShow[0], userInput]));
+  var clickHandler = function(action, userInput) {
+    if (action === 'save') {
+      dispatch(updateEntry([selectedShow[0], userInput]));
+    } else if (action === 'remove') {
+      dispatch(removeEntry([selectedShow[0]]));
+    }
+
   }
 
   return (

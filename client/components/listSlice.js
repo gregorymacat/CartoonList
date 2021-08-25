@@ -26,8 +26,9 @@ export const listSlice = createSlice({
     },
     removeEntry: (state, action) => {
       // var unwantedShowIndex = state.userShows.indexOf(action.payload);
-      delete userShows[action.payload[0]];
-      for (var index = action.payload[0] + 1; index < Object.keys(state.userShows).length; index++) {
+      var delIndex = action.payload[0];
+      delete state.userShows[delIndex];
+      for (var index = delIndex + 1; index < Object.keys(state.userShows).length; index++) {
         state.userShows[index - 1] = state.userShows[index];
       }
       delete state.userShows[Object.keys(state.userShows).length - 1];
@@ -38,7 +39,6 @@ export const listSlice = createSlice({
       // });
       console.log(state.userShows)
       console.log(typeof action.payload[0])
-
 
       state.userShows[action.payload[0]].userInfo = action.payload[1];
     },
