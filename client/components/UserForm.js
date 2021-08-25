@@ -5,31 +5,49 @@ class UserForm extends React.Component {
     super(props);
 
     this.state = {
-      status: '',
-      watchCount: 0,
-      score: '',
-      rewatchCount: 0,
-      review: ''
+      status: this.props.currentShow.userInfo.status || 'Watching',
+      watchCount: this.props.currentShow.userInfo.watchCount || null,
+      score: this.props.currentShow.userInfo.score || null,
+      rewatchCount: this.props.currentShow.userInfo.rewatchCount || null,
+      review: this.props.currentShow.userInfo.review || null
     }
 
     this.changeHandler = this.changeHandler.bind(this);
-    this.clickHandler = this.clickHandler.bind(this);
+    this.selectHandler = this.selectHandler.bind(this);
+    this.submitHandler = this.submitHandler.bind(this);
   };
 
   changeHandler = function(event) {
-
+    if (event.target.id === 'watchCount'){
+      this.setState({watchCount: event.target.value});
+    } else if (event.target.id === 'score'){
+      this.setState({score: event.target.value});
+    } else if (event.target.id === 'review') {
+      this.setState({review: event.target.value});
+    } else if (event.target.id === 'rewatchCount') {
+      this.setState({rewatchCount: event.target.value});
+    } else if (event.target.id === 'status') {
+      this.setState({status: event.target.value});
+    }
   }
-  clickHandler = function(event) {
-
+  selectHandler = function(event) {
+    this.setState({status: event.target.value});
   }
+  submitHandler = function(event) {
+    event.preventDefault();
+    var stateCopy = this.state;
+    this.props.handleClick(stateCopy);
+  }
+
 
   render() {
+    var current = this.props.currentShow.userInfo;
     return(
-      <form className="user-cartoon-form">
+      <form className="user-cartoon-form" onChange={this.changeHandler}>
         <div className="user-cartoon-form-top">
           <label>
             Completion Status
-            <select type="text">
+            <select id="status" onChange={this.changeHandler} defaultValue={current.status}>
               <option value="Watching">Watching</option>
               <option value="Completed">Completed</option>
               <option value="Plan to Watch">Plan to Watch</option>
@@ -38,27 +56,27 @@ class UserForm extends React.Component {
           </label>
           <label>
             Episodes Watched
-            <input type="number" min="0"></input>
+            <input id="watchCount" type="number" min="0" defaultValue={current.watchCount || ""}></input>
           </label>
         </div>
         <div className="user-cartoon-form-mid">
           <label>
             Score
-            <input type="number" min="1" max="100"></input>
+            <input id="score" type="number" min="1" max="100" defaultValue={current.score || null}></input>
           </label>
           <label>
             Rewatched Count
-            <input type="number" min="0"></input>
+            <input id="rewatchCount" type="number" min="0" defaultValue={current.rewatchCount || null}></input>
           </label>
         </div>
         <div className="user-cartoon-form-lower">
           <label>
             Review
           </label>
-          <textarea type="text" rows ="10" cols="50"></textarea>
+          <textarea id="review" type="text" rows ="10" cols="50" defaultValue={current.review || ""}></textarea>
         </div>
         <div className="user-cartoon-form-bottom">
-          <button>
+          <button onClick={this.submitHandler}>
             Save
           </button>
         </div>
