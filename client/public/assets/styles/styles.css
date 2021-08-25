@@ -46,6 +46,27 @@ nav {
 nav h1 {
   margin-left: 1.5%;
 }
+.nav-search-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 3.6%;
+  right: 2%;
+  width: 10%;
+  min-height: 5%;
+  padding: 0 4px 4px 4px;
+  background-color: #FFFEEE;
+  border: 1px solid black;
+}
+.nav-search-result-entry {
+  width: 100%;
+  min-height: 4vh;
+  padding: 5px;
+  text-align: center;
+  border-top: 1px solid black;
+}
 
 /***************
   Cartoon List
@@ -117,6 +138,7 @@ nav h1 {
   box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
 }
 
+
 /***************
   Cartoon Form
 ****************/
@@ -150,4 +172,8 @@ nav h1 {
   display: block;
   margin: 2%;
   resize: none;
+}
+.user-cartoon-form-bottom {
+  display: flex;
+  margin: 2%;
 }

@@ -35,8 +35,12 @@ class UserForm extends React.Component {
   }
   submitHandler = function(event) {
     event.preventDefault();
-    var stateCopy = this.state;
-    this.props.handleClick(stateCopy);
+    if (event.target.id === 'remove') {
+      this.props.handleClick('remove');
+    } else if (event.target.id === 'save') {
+      var stateCopy = this.state;
+      this.props.handleClick('save', stateCopy);
+    }
   }
 
 
@@ -76,7 +80,10 @@ class UserForm extends React.Component {
           <textarea id="review" type="text" rows ="10" cols="50" defaultValue={current.review || ""}></textarea>
         </div>
         <div className="user-cartoon-form-bottom">
-          <button onClick={this.submitHandler}>
+          <button id="remove" onClick={this.submitHandler}>
+            Delete
+          </button>
+          <button id="save" onClick={this.submitHandler}>
             Save
           </button>
         </div>
