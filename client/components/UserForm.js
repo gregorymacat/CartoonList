@@ -7,7 +7,7 @@ class UserForm extends React.Component {
     this.state = {
       status: this.props.currentShow.userInfo.status || 'Watching',
       watchCount: this.props.currentShow.userInfo.watchCount || null,
-      score: this.props.currentShow.score || null,
+      score: this.props.currentShow.userInfo.score || null,
       rewatchCount: this.props.currentShow.userInfo.rewatchCount || null,
       review: this.props.currentShow.userInfo.review || null
     }
