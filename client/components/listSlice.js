@@ -1,19 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
 import exampleData from '../public/exampledata';
 
-var initialUserData = [
-  exampleData.avatar,
-  exampleData.adventureTime,
-  exampleData.gardenWall,
-  exampleData.gumball,
-  exampleData.steven,
-  exampleData.infinity,
-  exampleData.bears,
-];
+var initialUserData = {
+  0: exampleData.avatar,
+  1: exampleData.adventureTime,
+  2: exampleData.gardenWall,
+  3: exampleData.gumball,
+  4: exampleData.steven,
+  5: exampleData.infinity,
+  6: exampleData.bears
+};
 
 const initialState = {
   userShows: initialUserData,
-  selectedShow: {}
+  selectedShow: null
 }
 
 export const listSlice = createSlice({
@@ -22,17 +22,25 @@ export const listSlice = createSlice({
   reducers: {
     addEntry: (state, action) => {
       var newShow = action.payload;
-      state.userShows.push(newShow);
+      state.userShows.push([userShows.length - 1, newShow]);
     },
     removeEntry: (state, action) => {
-      var unwantedShowIndex = state.userShows.indexOf(action.payload);
-      state.userShows.splice(unwantedShowIndex, 1);
+      // var unwantedShowIndex = state.userShows.indexOf(action.payload);
+      delete userShows[action.payload[0]];
+      for (var index = action.payload[0] + 1; index < Object.keys(state.userShows).length; index++) {
+        state.userShows[index - 1] = state.userShows[index];
+      }
+      delete state.userShows[Object.keys(state.userShows).length - 1];
     },
     updateEntry: (state, action) => {
-      var changeIndex = state.userShows.indexOf(action.payload.show);
-      var changedScore = action.payload.score;
+      // var changeIndex = state.userShows.findIndex((stateShow) => {
+      //   stateShow.name === action.payload[0];
+      // });
+      console.log(state.userShows)
+      console.log(typeof action.payload[0])
 
-      state.userShows[changeIndex].score = changedScore;
+
+      state.userShows[action.payload[0]].userInfo = action.payload[1];
     },
     selectEntry: (state, action) => {
       var selectedShow = action.payload;
