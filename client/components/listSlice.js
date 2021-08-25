@@ -4,11 +4,6 @@ import exampleData from '../public/exampledata';
 var initialUserData = {
   0: exampleData.avatar,
   1: exampleData.adventureTime,
-  2: exampleData.gardenWall,
-  3: exampleData.gumball,
-  4: exampleData.steven,
-  5: exampleData.infinity,
-  6: exampleData.bears
 };
 
 var allShowData = [
@@ -23,7 +18,7 @@ var allShowData = [
 
 const initialState = {
   userShows: initialUserData,
-  allShows: initialUserData,
+  allShows: allShowData,
   selectedShow: null
 }
 
@@ -33,30 +28,41 @@ export const listSlice = createSlice({
   reducers: {
     addEntry: (state, action) => {
       var newShow = action.payload;
+      // console.log('payload ', newShow);
       var newIndex = Object.keys(state.userShows).length;
+      var currentShows = Object.values(state.userShows);
+      var exists = false;
 
-      state.userShows[newIndex] = newShow[Object.keys(newShow)[0]];
+      for (var index = 0; index < currentShows.length; index++) {
+        // console.log(JSON.stringify(currentShows[index]));
+        // console.log('the new show ', JSON.stringify(newShow));
+        if (JSON.stringify(newShow) === JSON.stringify(currentShows[index])) {
+          exists = true;
+        }
+      }
+      if (!exists) {
+        // console.log('placing at ', newIndex)
+        state.userShows[newIndex] = newShow;
+      }
     },
     removeEntry: (state, action) => {
       // var unwantedShowIndex = state.userShows.indexOf(action.payload);
       var delIndex = action.payload[0];
+      var userShowCount = Object.keys(state.userShows).length;
+
       delete state.userShows[delIndex];
-      for (var index = delIndex + 1; index < Object.keys(state.userShows).length; index++) {
+      for (var index = delIndex + 1; index < userShowCount; index++) {
         state.userShows[index - 1] = state.userShows[index];
       }
-      delete state.userShows[Object.keys(state.userShows).length - 1];
+      delete state.userShows[userShowCount - 1];
     },
     updateEntry: (state, action) => {
       // var changeIndex = state.userShows.findIndex((stateShow) => {
       //   stateShow.name === action.payload[0];
       // });
-      console.log(state.userShows)
-      console.log(typeof action.payload[0])
-
       state.userShows[action.payload[0]].userInfo = action.payload[1];
     },
     selectEntry: (state, action) => {
-      console.log(action.payload)
       var selectedShow = action.payload;
 
       state.selectedShow = action.payload;
