@@ -138,7 +138,6 @@ nav h1 {
   box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
 }
 
-
 /***************
   Cartoon Form
 ****************/
@@ -175,5 +174,7 @@ nav h1 {
 }
 .user-cartoon-form-bottom {
   display: flex;
+  width: 60%;
   margin: 2%;
+  justify-content: space-evenly;
 }
