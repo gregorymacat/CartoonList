@@ -36,7 +36,7 @@ class UserForm extends React.Component {
   submitHandler = function(event) {
     event.preventDefault();
     if (event.target.id === 'remove') {
-      this.props.handleClick('remove')
+      this.props.handleClick('remove');
     } else if (event.target.id === 'save') {
       var stateCopy = this.state;
       this.props.handleClick('save', stateCopy);

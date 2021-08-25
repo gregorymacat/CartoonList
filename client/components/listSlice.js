@@ -11,8 +11,19 @@ var initialUserData = {
   6: exampleData.bears
 };
 
+var allShowData = [
+  exampleData.avatar,
+  exampleData.adventureTime,
+  exampleData.gardenWall,
+  exampleData.gumball,
+  exampleData.steven,
+  exampleData.infinity,
+  exampleData.bears
+];
+
 const initialState = {
   userShows: initialUserData,
+  allShows: initialUserData,
   selectedShow: null
 }
 
@@ -22,7 +33,9 @@ export const listSlice = createSlice({
   reducers: {
     addEntry: (state, action) => {
       var newShow = action.payload;
-      state.userShows.push([userShows.length - 1, newShow]);
+      var newIndex = Object.keys(state.userShows).length;
+
+      state.userShows[newIndex] = newShow[Object.keys(newShow)[0]];
     },
     removeEntry: (state, action) => {
       // var unwantedShowIndex = state.userShows.indexOf(action.payload);
@@ -43,6 +56,7 @@ export const listSlice = createSlice({
       state.userShows[action.payload[0]].userInfo = action.payload[1];
     },
     selectEntry: (state, action) => {
+      console.log(action.payload)
       var selectedShow = action.payload;
 
       state.selectedShow = action.payload;
