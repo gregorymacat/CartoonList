@@ -28,11 +28,12 @@ class NavBar extends React.Component {
       <nav>
         <h1>CartoonList</h1>
         <div className="nav-search-bar">
+          <i className="material-icons-outlined account">account_circle</i>
           <label>Search</label>
           <input onChange={this.handleChange} value={this.state.userSearch} type="text"></input>
           {this.state.userSearch.length > 2 ?
           <SearchResults search={this.state.userSearch} handleClick={this.handleClick}/> : null}
-          <img src="https://img.icons8.com/fluency-systems-regular/24/000000/search--v1.png"/>
+          <i className="material-icons-outlined search">search</i>
         </div>
       </nav>
     )

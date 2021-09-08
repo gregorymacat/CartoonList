@@ -6,21 +6,21 @@ Fullstack Application that will display cartoons to a user that they can then se
 - [ ] Whiteboard flow of website
 - [ ] Design schema for database
 - [X] Layout project directories
-- [ ] Handle dependencies
+- [X] Handle dependencies
   - [X] package.json/express/axios/...etc
-  - [ ] webpack
-  - [ ] babel
+  - [X] webpack
+  - [X] babel
 
 ## Webpage Sections Complete
 - [X] Create HTML document
 - [X] Loading in Google
-- [ ] Webpack script imported
-- [ ] Rendering react components
-- [ ] Navigation Bar
+- [X] Webpack script imported
+- [X] Rendering react components
+- [X] Navigation Bar
   - [ ] Home Icon
   - [ ] Browse
   - [ ] List
-  - [ ] Search
+  - [X] Search
   - [ ] Profile Icon
     - [ ] Create an Account
     - [ ] Login
@@ -41,7 +41,7 @@ Fullstack Application that will display cartoons to a user that they can then se
   - [X] Starting
   - [X] Logging
   - [X] Serving static files
-  - [ ] Pertinent
+  - [ ] Persistent
 - [ ] Database
   - [ ] Created
   - [ ] CRUD operations
@@ -51,7 +51,7 @@ Fullstack Application that will display cartoons to a user that they can then se
   - [ ] Reviews
 - [ ] Routing
   - [ ] Basic GET
-  - [ ] Basic POST
+  - [X] Basic POST
   - [ ] One for each in nav bar
 - [ ] Data Retrieval
   - [X] Found API
