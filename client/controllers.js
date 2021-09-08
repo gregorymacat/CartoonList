@@ -14,6 +14,6 @@ exports.module = {
         image: userData[key].image
       })
     }
-    axios.post(url, )
+    axios.post(url);
   }
 }

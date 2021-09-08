@@ -8,26 +8,30 @@ class NavBar extends React.Component {
       userSearch: ''
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
-  handleChange = function(event) {
-    var search = event.target.value;
-    var results = [];
 
-    if (search.length > 1) {
+  handleChange = (event) => {
+    var search = event.target.value;
+    if (search.length > 0) {
       this.setState({userSearch: search});
-    } else {
+    } else if (search.length === 0) {
       this.setState({userSearch: ''});
     }
   }
+  handleClick = () => {
+    this.setState({userSearch: ''});
+  }
 
   render() {
-    return(
+    return (
       <nav>
         <h1>CartoonList</h1>
         <div className="nav-search-bar">
           <label>Search</label>
-          <input onChange={this.handleChange} type="text"></input>
-          {this.state.userSearch ? <SearchResults search={this.state.userSearch}/> : null}
+          <input onChange={this.handleChange} value={this.state.userSearch} type="text"></input>
+          {this.state.userSearch.length > 2 ?
+          <SearchResults search={this.state.userSearch} handleClick={this.handleClick}/> : null}
           <img src="https://img.icons8.com/fluency-systems-regular/24/000000/search--v1.png"/>
         </div>
       </nav>

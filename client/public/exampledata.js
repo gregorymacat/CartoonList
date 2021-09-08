@@ -83,6 +83,30 @@ export var exampleData = {
       review: null
     }
   },
+  gravity: {
+    name: 'Gravity Falls',
+    description: 'Twins Dipper and Mabel Pines are sent to spend the summer with their great-uncle, Grunkle Stan, in the mysterious town of Gravity Falls, Ore. Grunkle Stan has the kids help him run The Mystery Shack, the tourist trap that he owns. The twins try to adapt to the weird surroundings but sense there is something strange about Gravity Falls and begin to unlock its secrets. When Dipper uncovers a cryptic journal that offers insight into the town\'s mysteries, he and Mabel use it and their enthusiastic desire to vanquish evil to battle the imminent mysteries that surround them.',
+    image: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRccOFXWq4TwQAsqPEW7pNJr-Al76gjMRtxDaXTWubQLbp_LASw',
+    userInfo: {
+      status: null,
+      watchCount: null,
+      score: null,
+      rewatchCount: null,
+      review: null
+    }
+  },
+  outThere: {
+    name: 'Out There',
+    description: 'Experiencing the misadventures, missteps and miseries of teenage years is more bearable with a partner in crime. After all, two people commiserating about puberty, first loves, social ostracism, and the tender mercies of youth is better than one when you\'re out there, all alone. That\'s where Chad and Chris find themselves, stuck in limbo between childhood and adulthood in the bleak, uninspiring small town of Holford. They\'re best friends and total opposites -- Chad is melancholy and fairly level-headed, while Chris couldn\'t care less about his unhinged behavior or its consequences. Being responsible young adults can wait, at least until the end of high school. "Out There" is created by Ryan Quincy (the voice of Chad), a two-time Emmy-winning director and producer of "South Park."',
+    image: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTAebTwksQX9j8C_bXJ71L_z8hWAxpJdJC4hLzcRztRhlXTiGPf',
+    userInfo: {
+      status: null,
+      watchCount: null,
+      score: null,
+      rewatchCount: null,
+      review: null
+    }
+  }
 }
 
 export default exampleData;
