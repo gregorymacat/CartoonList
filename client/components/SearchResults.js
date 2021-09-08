@@ -8,22 +8,23 @@ var SearchResults = function(props) {
   var dispatch = useDispatch();
 
   var results = [];
-  for (var [index, show] of Object.entries(allShows)) {
-    // console.log(show.name, ' ', props.search);
+  for (var index = 0; index < allShows.length; index++) {
+    var show = allShows[index];
     if (show.name.toLowerCase().includes(props.search)) {
-      results.push({[index]: show});
+      results.push(show);
     }
   }
 
-  // console.log(results);
-
   return(
     <div className="nav-search-results">
-      {results.map((show) => {
+      {results.map((show, index) => {
         return (
-          <div className="nav-search-result-entry"
-            onClick={()=>{dispatch(addEntry(show))}}>
-              {show[Object.keys(show)[0]].name}</div>
+          <div key={index} className="nav-search-result-entry"
+            onClick={()=>{
+              dispatch(addEntry(show));
+              props.handleClick();
+            }}
+          >{show.name}</div>
         )
       })}
     </div>
@@ -31,5 +32,3 @@ var SearchResults = function(props) {
 }
 
 export default SearchResults;
-
-//{() => {dispatch(selectEntry([Object.keys(show)[0], show[Object.keys(show)[0]]]))}}

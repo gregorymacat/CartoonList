@@ -5,7 +5,6 @@ import {selectEntry} from './listSlice';
 var ToonList = function() {
   var userShows = useSelector((state) => state.list.userShows);
   var dispatch = useDispatch();
-  console.log(userShows);
 
   return (
     <div className="user-cartoon-list">

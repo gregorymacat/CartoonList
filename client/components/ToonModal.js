@@ -14,8 +14,8 @@ var ToonModal = function() {
   var clickHandler = function(action, userInput) {
     if (action === 'save') {
       dispatch(updateEntry([selectedShow[0], userInput]));
+      dispatch(selectEntry(null));
     } else if (action === 'remove') {
-      console.log([selectedShow[0]])
       dispatch(removeEntry([selectedShow[0]]));
       dispatch(selectEntry(null));
     }
