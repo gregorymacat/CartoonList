@@ -10,9 +10,11 @@ var ToonModal = function(props) {
 
   var clickHandler = (action, userInput) => {
     if (action === 'save') {
+      props.toggle('toon');
       dispatch(updateEntry([selectedShow[0], userInput]));
       dispatch(selectEntry(null));
     } else if (action === 'remove') {
+      props.toggle('toon');
       dispatch(removeEntry([selectedShow[0]]));
       dispatch(selectEntry(null));
     }

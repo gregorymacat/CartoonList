@@ -1,4 +1,6 @@
 import React from 'react';
+import {oAuth} from '../../../env/config.js';
+import { jwtDecrypt } from 'jose/jwt/decrypt'
 
 class UserForm extends React.Component {
   constructor(props){
@@ -25,11 +27,22 @@ class UserForm extends React.Component {
       this.setState({age: event.target.value});
     }
   }
-  submitHandler = function(event) {
+  submitHandler = (event) => {
     event.preventDefault();
 
     var stateCopy = this.state;
     this.props.handleClick(stateCopy);
+  }
+  handleCredentialResponse = (response) => {
+    //const { payload, protectedHeader } = await jwtDecrypt(response.credentials);
+    jwtDecrypt(response.credentials)
+      .then(decrypted => {
+        return console.log(decrypted.payload);
+      })
+      .catch(err => {
+        return console.error('UNABLE TO DECRYPT');
+      })
+    //console.log(payload);
   }
 
   render() {
@@ -55,6 +68,18 @@ class UserForm extends React.Component {
         <button className="user-account-form-submit" onClick={this.submitHandler}>
           Create Account
         </button>
+        <div id="g_id_onload"
+          data-client_id={oAuth.clientID}
+          data-callback="handleCredentialResponse">
+        </div>
+        <div className="g_id_signin"
+          data-type="standard"
+          data-size="large"
+          data-theme="outline"
+          data-text="sign_in_with"
+          data-shape="rectangular"
+          data-logo_alignment="left">
+        </div>
       </form>
     )
   }

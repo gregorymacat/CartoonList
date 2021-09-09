@@ -229,7 +229,7 @@ nav h1 {
 /***************
   Account Form
 ****************/
-.user-account-form {
+/* .user-account-form {
   display: grid;
   height: 100%;
   width: 92%;
@@ -269,4 +269,4 @@ nav h1 {
 }
 .user-cartoon-form-submit {
   grid-area: submit;
-}
+} */
