@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import exampleData from '../public/exampledata';
+import exampleData from '../../exampledata';
 
 var allShowData = [];
 var initialUserData = {
@@ -10,7 +10,7 @@ const initialState = {
   userShows: initialUserData,
   allShows: allShowData,
   selectedShow: null
-}
+};
 
 for (var title in exampleData) {
   allShowData.push(exampleData[title]);

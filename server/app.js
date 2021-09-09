@@ -6,7 +6,7 @@ const logger = require('morgan');
 const port = 3000;
 
 app.use(logger('dev'));
-var publicPath = path.join(__dirname, '../client/public');
+var publicPath = path.join(__dirname, '../public');
 app.use('/', express.static(publicPath));
 
 app.listen(port, () => {
