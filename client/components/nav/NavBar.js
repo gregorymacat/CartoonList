@@ -1,6 +1,5 @@
 import React from 'react';
 import SearchResults from './SearchResults';
-import AccountIcon from './AccountIcon';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -29,7 +28,8 @@ class NavBar extends React.Component {
       <nav>
         <h1>CartoonList</h1>
         <div className="nav-search-bar">
-          <AccountIcon/>
+          <i className="material-icons-outlined account"
+            onClick={() => {this.props.toggle('account')}}>account_circle</i>
           <label>Search</label>
           <input onChange={this.handleChange} value={this.state.userSearch} type="text"></input>
           {this.state.userSearch.length > 2 ?

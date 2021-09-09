@@ -2,6 +2,7 @@ import React from 'react';
 import ToonList from '../list/ToonList';
 import NavBar from '../nav/NavBar';
 import ToonModal from '../list/ToonModal';
+import AccountModal from '../nav/AccountModal';
 
 class App extends React.Component {
   constructor(props){
@@ -18,16 +19,18 @@ class App extends React.Component {
       var toggleDisplay = !this.state.dispToonModal;
       this.setState({dispToonModal: toggleDisplay});
     } else if (modalType === 'account') {
-      this.setState({dispNavModal: !this.state.dispNavModal});
+      var toggleDisplay = !this.state.dispAccModal;
+      this.setState({dispAccModal: toggleDisplay});
     }
   }
 
   render(){
     return(
     <React.Fragment>
-      <NavBar/>
+      <NavBar toggle={this.toggleModal}/>
       <ToonList toggle={this.toggleModal}/>
       {this.state.dispToonModal ? <ToonModal toggle={this.toggleModal}/> : null}
+      {this.state.dispAccModal ? <AccountModal toggle={this.toggleModal}/> : null}
     </React.Fragment>
     )
   }

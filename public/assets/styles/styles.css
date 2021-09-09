@@ -14,6 +14,31 @@ html, body {
 }
 
 /***************
+ General Modal
+****************/
+.modal-background {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-body {
+  display: flex;
+  justify-content: center;
+  background-color: #9FC4E8;
+  height: 50%;
+  width: 50%;
+  border: 15px solid #7AA5EF;
+  border-radius: 5px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+/***************
  Navbar Section
 ****************/
 nav {
@@ -119,7 +144,7 @@ nav h1 {
 /***************
  Cartoon Modal
 ****************/
-.cartoon-modal-background {
+.modal-background.cartoon{
   position: fixed;
   display: flex;
   align-items: center;
@@ -130,7 +155,7 @@ nav h1 {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
-.cartoon-modal-body {
+.modal-body.cartoon{
   display: flex;
   justify-content: center;
   background-color: #9FC4E8;
@@ -199,4 +224,49 @@ nav h1 {
 }
 .user-cartoon-form-save {
   grid-area: save;
+}
+
+/***************
+  Account Form
+****************/
+.user-account-form {
+  display: grid;
+  height: 100%;
+  width: 92%;
+  grid-template-areas:
+    "username email"
+    "age password"
+    "submit";
+  grid-template-columns: 20% 20%;
+  grid-template-rows: 35% 35% 20%;
+  gap: 2% 20%;
+  justify-content: center;
+}
+.user-account-form input {
+  display: block;
+}
+.user-account-form input {
+  width: 25%;
+}
+.user-account-form-username,
+.user-account-form-email,
+.user-account-form-password,
+.user-account-form-age,
+.user-cartoon-form-submit {
+  justify-self: center;
+}
+.user-cartoon-form-email {
+  grid-area: email;
+}
+.user-cartoon-form-password {
+  grid-area: password;
+}
+.user-cartoon-form-age {
+  grid-area: age;
+}
+.user-cartoon-form-password {
+  grid-area: password;
+}
+.user-cartoon-form-submit {
+  grid-area: submit;
 }

@@ -5,8 +5,8 @@ import {useSelector, useDispatch} from 'react-redux';
 import {selectEntry, updateEntry, removeEntry} from './listSlice';
 
 var ToonModal = function(props) {
+  const dispatch = useDispatch();
   var selectedShow = useSelector((state) => state.list.selectedShow)
-  var dispatch = useDispatch();
 
   var clickHandler = (action, userInput) => {
     if (action === 'save') {
@@ -26,8 +26,8 @@ var ToonModal = function(props) {
   }
 
   return (
-    <div className="cartoon-modal-background" onClick={(e) => {hideModal(e)}}>
-      <div className="cartoon-modal-body">
+    <div className="modal-background cartoon" onClick={(e) => {hideModal(e)}}>
+      <div className="modal-body cartoon">
         <UserForm handleClick={clickHandler} currentShow={selectedShow[1]}/>
       </div>
     </div>
