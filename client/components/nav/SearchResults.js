@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {useSelector, useDispatch} from 'react-redux';
-import {addEntry, removeEntry} from './listSlice';
+import {addEntry, removeEntry} from '../list/listSlice';
 
 var SearchResults = function(props) {
   var allShows = useSelector((state) => state.list.allShows);
