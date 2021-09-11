@@ -3,10 +3,11 @@ const path = require('path');
 const app = express();
 
 const logger = require('morgan');
-const port = 3000;
+var configPath = path.join(__dirname, '../env/config.js');
+const {port} = require(configPath).server;
 
 app.use(logger('dev'));
-var publicPath = path.join(__dirname, '../client/public');
+var publicPath = path.join(__dirname, '../public');
 app.use('/', express.static(publicPath));
 
 app.listen(port, () => {

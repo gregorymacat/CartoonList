@@ -2,7 +2,7 @@ import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {selectEntry} from './listSlice';
 
-var ToonList = function() {
+var ToonList = function(props) {
   var userShows = useSelector((state) => state.list.userShows);
   var dispatch = useDispatch();
 
@@ -13,7 +13,10 @@ var ToonList = function() {
           return (
             <div className="cartoon-list-entry"  key={index} data-index={index}>
               <img src={currentShow.image} alt='image of show'
-                onClick={() => {dispatch(selectEntry([index, currentShow]))}}></img>
+                onClick={() => {
+                  dispatch(selectEntry([index, currentShow]));
+                  props.toggle('toon');
+              }}></img>
               <div className="cartoon-list-entry-text">
                 <div className="cartoon-list-entry-top">
                   <span>{currentShow.name}</span>
