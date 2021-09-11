@@ -34,14 +34,7 @@ Here is the demo for the application so far!
 * Average scores of users
 
 # Technologies
-<<<<<<< HEAD
-Environment: Node.js
-Front End: React, Redux Toolkit, Webpack, Babel
-Database: PostgreSQL, node-postgres
-Server: Express, Express Router
-=======
 Environment: Node.js <br/>
 Front End: React, Redux Toolkit, Webpack, Babel <br/>
 Database: PostgreSQL, node-postgres <br/>
 Server: Express, Express Router
->>>>>>> 0f38588104ca38e851512159710dc83410b001cb
